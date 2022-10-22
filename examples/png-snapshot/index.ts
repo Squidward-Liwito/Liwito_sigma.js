@@ -1,4 +1,4 @@
-/**
+ /**
  * This is an example of sigma showing how to snapshot the rendered graph as a
  * PNG file.
  */
@@ -17,23 +17,17 @@ const RED = "#FA4F40";
 const BLUE = "#727EE0";
 const GREEN = "#5DB346";
 
-graph.addNode("John", { size: 15, label: "John", color: RED });
-graph.addNode("Mary", { size: 15, label: "Mary", color: RED });
-graph.addNode("Suzan", { size: 15, label: "Suzan", color: RED });
-graph.addNode("Nantes", { size: 15, label: "Nantes", color: BLUE });
-graph.addNode("New-York", { size: 15, label: "New-York", color: BLUE });
-graph.addNode("Sushis", { size: 7, label: "Sushis", color: GREEN });
-graph.addNode("Falafels", { size: 7, label: "Falafels", color: GREEN });
-graph.addNode("Kouign Amann", { size: 7, label: "Kouign Amann", color: GREEN });
+graph.addNode("x", { size: 15, label: "x", color: RED });
+graph.addNode("x_=x-mean", { size: 15, label: "x_", color: RED });
+graph.addNode("u=(1/n)*sum(x,axis=0)", { size: 15, label: "u", color: RED });
+graph.addNode("x_^2", { size: 15, label: "x_^2", color: BLUE });
+graph.addNode("var", { size: 15, label: "var", color: BLUE });
+graph.addNode("VSq=power(var+ß,0.5)", { size: 7, label: "VSq", color: GREEN });
+graph.addNode("iVSq = ", { size: 7, label: "iVSq", color: GREEN });
+graph.addNode("x_Bn", { size: 7, label: "x_Bn", color: GREEN });
 
-graph.addEdge("John", "Mary", { type: "line", label: "works with", size: 5 });
-graph.addEdge("Mary", "Suzan", { type: "line", label: "works with", size: 5 });
-graph.addEdge("Mary", "Nantes", { type: "arrow", label: "lives in", size: 5 });
-graph.addEdge("John", "New-York", { type: "arrow", label: "lives in", size: 5 });
-graph.addEdge("Suzan", "New-York", { type: "arrow", label: "lives in", size: 5 });
-graph.addEdge("John", "Falafels", { type: "arrow", label: "eats", size: 5 });
-graph.addEdge("Mary", "Sushis", { type: "arrow", label: "eats", size: 5 });
-graph.addEdge("Suzan", "Kouign Amann", { type: "arrow", label: "eats", size: 5 });
+graph.addEdge("x", "x_=x-mean", { type: "arrow", label: "works with", size: 5 ,color: RED});
+
 
 graph.nodes().forEach((node, i) => {
   const angle = (i * 2 * Math.PI) / graph.order;
